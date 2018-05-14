@@ -6,12 +6,13 @@ body {
   font-size: 16px;
   color: white;
   height: auto;
+  background: #eee;
 }
 
 .header {
   background-color: #f00;
   width: 100%;
-  border: 1px solid #eee;
+  border: 0 1px 1px 1px solid #eee;
 }
 
 .header-nav {
@@ -22,7 +23,6 @@ body {
 
 .header-list {
   display: flex;
-
 }
 
 .header-logo {
@@ -35,10 +35,6 @@ body {
   padding: 10px 20px;
   display: block;
 }
-/*
-.header-list li a{
-  padding: 10px 20px;
-} */
 
 .header-list li {
   border-left: 1px solid white;
@@ -51,7 +47,3 @@ body {
 .header a:hover {
   background: black;
 }
-
-/* .header-logo:hover {
-  background: black;
-} */
