@@ -33,9 +33,11 @@ end
 feature 'log in' do
   background :each do
     visit new_session_path
+
   end
 
   scenario 'shows username on the homepage after login' do
+    user = User.create(username: 'Kevin', password: 'password')
     fill_in 'Username', with: 'Kevin'
     fill_in 'Password', with: 'password'
     click_button 'Log In'
@@ -43,4 +45,23 @@ feature 'log in' do
     expect(page).to have_content("Kevin")
   end
 
+end
+
+feature 'logging out' do
+  background :each do
+    visit new_session_path
+    user = User.create(username: 'Kevin', password: 'password')
+    fill_in 'Username', with: 'Kevin'
+    fill_in 'Password', with: 'password'
+    click_button 'Log In'
+    click_button 'Log Out'
+  end
+
+  scenario 'begins with a logged out state' do
+    expect(current_url).to eq(new_session_url)
+  end
+
+  scenario 'doesn\'t show username on the homepage after logout' do
+    expect(page).not_to have_content('Kevin')
+  end
 end
