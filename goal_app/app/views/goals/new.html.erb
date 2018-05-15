@@ -1,0 +1,10 @@
+
+
+<form class="" action="<%= user_goals_url(@user) %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+  <label for="">Title
+    <input type="text" name="goal[title]" value="">
+  </label>
+
+  <input type="submit" value="Create Goal">
+</form>

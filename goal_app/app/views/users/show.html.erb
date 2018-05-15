@@ -1,0 +1,9 @@
+
+<% unless @user.goals.empty? %>
+  <% @user.goals.each do |goal| %>
+    <%= goal.title %>
+     <% end %>
+<% end %>
+
+
+<a href="<%= new_user_goal_url(@user) %>">Add Goal</a>
